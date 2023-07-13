@@ -1,0 +1,33 @@
+body {
+    height: 5000px;
+}
+
+span {
+    color: #6b9dc9ce
+}
+
+#test {
+    color: blue;
+    background-color: #F00;
+}
+
+section {
+    color: green
+}
+
+.custom {
+    color: red
+}
+
+/*
+employeeemail 
+
+1- camel case : employeeEmail
+2- snake case : employee_email
+3- kebab case : employee-email
+4- pascal case : EmployeeEmail
+*/
+
+.case {
+    color: red
+}

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/nature.avif"/>
     <title>HTML session</title>
 
     <style>
@@ -14,123 +15,59 @@
 </head>
 
 <body>
-    <button>Ok</button>
+    
+    <form action="">
+        <input type="file" name="" accept=".png" multiple id="">
+        <textarea placeholder="Please enter your message" name="" maxlength="10" id="" autofocus="30"
+            rows="10"></textarea>
 
-    <div>This is span</div>
-
-    <hr>
-    <code>This is code</code> <br>
-    <kbd>This is code</kbd> <br>
-    <samp>This is code</samp>
-
-    <hr>
-    <pre>Frontend                          course</pre>
-    <br>
-    <var>This is var</var>
-
-    <a href="https://www.google.com" target="_blank">Go to google</a> <br><br>
-    <a href="tel:123456789">Call</a><br><br>
-    <a href="sms:123456">Send sms</a><br><br>
-    <a href="mailto:abc@kimit.com">Send email</a><br><br>
-
-    <a href="./images/nature.avif" download>Download image</a>
-    <br><br>
-    <a href="http://wa.me/123456">Whatsapp</a>
-
-    <hr>
-    <article>This is article</article>
-    <aside>This is a side</aside>
-    <header>This is header</header>
-    <main>This is main</main>
-    <footer>This is footer</footer>
-    <nav>This is navigation bar</nav>
-    <section>This is section</section>
-
-    <hr>
-    <details>
-        <summary>Details summary here...</summary>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fugiat, possimus quas, at nesciunt
-            vero, quasi repellat consequuntur eius quam recusandae. Deserunt hic temporibus et provident impedit nemo
-            adipisci laudantium.</p>
-    </details>
-
-    <figure>
-        <img src="./images/nature.avif" width="200" alt="test">
-        <figcaption>This is caption</figcaption>
-    </figure>
-
-
-    <ol>
-        <li>This is one</li>
-        <li>This is two</li>
-        <li>This is three</li>
-    </ol>
-
-    <ul>
-        <li>HTML
-            <ul>
-                <li>head</li>
-                <li>body</li>
-            </ul>
-        </li>
-        <li>CSS</li>
-        <li>JS</li>
-        <li>React</li>
-    </ul>
-
-    <form action="./thanks.html" method="post">
-        Name: <input type="text" name="username" value="Mahmoud"><br><br>
-        password :<input type="password" name="user_password" id=""><br><br>
-
-        <select name="country" id="">
-            <optgroup label="Arabic">
-                <option value="egy">EGY</option>
-                <option value="ksa">KSA</option>
-            </optgroup>
-            <optgroup label="Other">
-                <option value="usa">USA</option>
-                <option value="uk">UK</option>
-            </optgroup>
-        </select>
-        <br><br>
-        <textarea name="" id="" cols="50" rows="20"></textarea><br><br>
-        <input type="button" value="OK"><br><br>
-        <input type="color" name="" id=""><br><br>
-        <input type="date" name="" id=""><br><br>
-        <input type="time" name="" id=""><br><br>
-        <input type="week" name="" id=""><br><br>
-        <input type="month" name="" id=""><br><br>
-        <input type="datetime-local" name="" id=""><br><br>
-        <input type="url" name="" id=""><br><br>
-        <input type="email" name="" id=""><br><br>
-        <input type="range" name="" id=""><br><br>
-        <input type="search" name="" id=""><br><br>
-        <input type="file" name="user_image" id=""><br><br> 
-        <input type="hidden" name="form_lang" value="en"><br><br>
-        <input type="image" src="images/nature.avif" width="200" alt="This is image">
-   
-
-        <input type="number" name="" id="">
-        <input type="tel">
         <br>
-
-        <input type="checkbox" name="courses" value="html" id="html">
-        <label for="html">HTML</label> <br>
-        <input type="checkbox" name="courses" value="css" id="css">
-        <label for="css">CSS</label>
-
-        <br><br>
-
-        <input type="radio" name="gender" id="male">
-        <label for="male">Male</label> <br>
-        <input type="radio" name="gender" id="female">
-        <label for="female">Female</label>
-
-        <br><br>
-        <input type="reset" value="Reset">
-        <br><br>
-        <input type="submit" value="submit my data">
+        <label for="">Please enter your name</label><br><br>
+        <input type="email" name="" placeholder="Enter your email" id="">
+        <input type="text" placeholder="Enter your name"><br><br>
+        <input type="text" value="Kimit" readonly><br><br>
+        <input type="text" value="Can't edit" disabled> <br><br>
+        <input type="text" name="username" dirname="My_dir" autocomplete="off"><br><br>
+        <input type="date" name="reg_dat" min="2023-07-13" max="2023-09-20" id=""><br><br>
+        <input type="number" name="" min="0" max="10" step="2" id=""><br><br>
+        <hr>
+        <input type="checkbox" name="" checked id="">
+        <input type="radio" name="" checked id="">
+        <hr>
+        <select name="" id="" multiple>
+            <option value="" selected>Egy</option>
+            <option value="">USA</option>
+        </select>
+        <hr>
+        <input type="submit" value="OK" formnovalidate formtarget="_blank">
     </form>
+
+    <audio src="./audios/114.mp3" controls></audio>
+
+    <video src="./vedios/4 SECOND TIMER ⏲️.mp4" width="400" autoplay muted controls></video>
+
+
+    <a href="./audios/114.mp3" target="_blank">click</a>
+    <hr>
+    <dl>
+        <dt>Apple Inc.</dt>
+        <dd>American multinational technology company headquartered in Cupertino, California that
+    </dl>
+
+    <hr>
+
+
+    <iframe src="https://www.google.com/" frameborder="0"></iframe>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pXUT06z6sK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55252.64880374115!2d31.31181488037177!3d30.05720504025043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f69635550c9%3A0x94c4e37b347705d1!2sKimit%20Innovation%20Technology!5e0!3m2!1sen!2seg!4v1689266177060!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <span>Kimit <bdi>كيميت</bdi>58</span>
+
+    <meter min="0" max="10" value="7"></meter>
+
+
+    &lt;div	&gt; This is div &lt;/div	&gt;
 </body>
 
 </html>
