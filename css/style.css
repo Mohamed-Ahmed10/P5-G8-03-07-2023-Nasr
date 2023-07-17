@@ -1,33 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    font-size: 10px;
+    --main_color: #00F
+}
+
 body {
-    height: 5000px;
+    height: 8000px;
+    color: var(--main_color)
 }
 
-span {
-    color: #6b9dc9ce
+* {
+    font-family: 'Lato', sans-serif;
 }
 
-#test {
-    color: blue;
-    background-color: #F00;
+.test {
+    color: var(--main_color)
 }
 
-section {
-    color: green
+#explain {
+    color: aqua
 }
 
-.custom {
-    color: red
+.parent {
+    height: 300px;
+    width: 300px;
+    background-color: #00F;
 }
 
-/*
-employeeemail 
+.h_explain {
+    height: 100px;
+    width: 50%;
+    background-color: var(--main_color);
+}
 
-1- camel case : employeeEmail
-2- snake case : employee_email
-3- kebab case : employee-email
-4- pascal case : EmployeeEmail
-*/
+.h_explain2 {
+    background-color: #090909;
+    height: 50vh;
+    width: 200px;
+}
 
-.case {
-    color: red
+nav {
+    height: 70px;
+    background-color: #909090;
+}
+
+header {
+    height: calc(100vh - 70px);
+    background-color: #00F;
+    color: #FFF
+}
+
+.task {
+    height: 200px;
+    width: 200px;
+    background-color: var(--main_color);
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.font_explain {
+    font-size: 1.2rem;
+}
+
+.font_child {
+    font-size: 1.6rem;
+}
+
+div,
+p {
+    font-weight: bold;
 }
