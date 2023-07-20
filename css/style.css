@@ -1,74 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
-:root {
-    font-size: 10px;
-    --main_color: #00F
-}
-
 body {
-    height: 8000px;
-    color: var(--main_color)
+    height: 5000px;
 }
 
-* {
-    font-family: 'Lato', sans-serif;
+.bg {
+    height: 500px;
+    /* background-image: url(../images/nature.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+    /* background: url(../images/nature.jpg) no-repeat center fixed #F00; */
+    background-image: linear-gradient(#F00, #00F), url(../images/nature.jpg)
 }
 
-.test {
-    color: var(--main_color)
-}
-
-#explain {
-    color: aqua
-}
-
-.parent {
+.gradient {
     height: 300px;
     width: 300px;
-    background-color: #00F;
+    /* background-image: repeating-linear-gradient(#F00, #FF0 50%) */
+    /* background: repeating-radial-gradient(#276bf3, #00F 34%) */
+    background: conic-gradient(#F00, #00F 93%)
 }
 
-.h_explain {
-    height: 100px;
+.border_explain {
+    height: 0;
+    width: 0;
+    /* border-width: 30px 10px;
+    border-color: #F00 #00F #080 #FF0;
+    border-style: solid dotted groove double; */
+
+
+    /* border-top: 20px solid #0027ff;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent; */
+
+
+    border: 20px solid transparent;
+    border-top-color: #00F;
+}
+
+/* Arrow */
+
+.radius {
+    height: 150px;
+    width: 150px;
+    background-color: #4e4e4e;
+    /* border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px; */
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.space {
+    color: #FFF;
     width: 50%;
-    background-color: var(--main_color);
-}
-
-.h_explain2 {
-    background-color: #090909;
-    height: 50vh;
-    width: 200px;
-}
-
-nav {
-    height: 70px;
-    background-color: #909090;
-}
-
-header {
-    height: calc(100vh - 70px);
-    background-color: #00F;
-    color: #FFF
-}
-
-.task {
-    height: 200px;
-    width: 200px;
-    background-color: var(--main_color);
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-}
-
-.font_explain {
-    font-size: 1.2rem;
-}
-
-.font_child {
-    font-size: 1.6rem;
-}
-
-div,
-p {
-    font-weight: bold;
+    background-color: #4e4e4e;
+    padding: 20px;
+    /* margin-left: 50px; */
+    margin-inline-start: 50px;
 }
