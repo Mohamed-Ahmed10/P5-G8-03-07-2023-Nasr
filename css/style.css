@@ -1,106 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
 :root {
-    scroll-behavior: smooth;
+    --header_color: #cfd6e1;
+    --default_color: #81848a;
+    --gray_color: #cacac2;
+    --gold: #ede861;
+    --brand: #59ab6e;
+    --dark_bg: #212934;
+    --light_bg: #e9eef5;
+    --hero_bg: #efefef
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.float_parent>div,
+.float_parent>li {
+    float: left;
+}
+
+.float_parent::after {
+    display: block;
+    content: "";
+    clear: both
 }
 
 body {
     height: 8000px;
 }
 
-* {
-    box-sizing: border-box
+.float_right {
+    float: right !important;
 }
 
-.show {
-    width: 250px;
-    background-color: #4e4e4e;
-    color: #FFF;
-    font-weight: bold;
-    line-height: 50px;
-    text-align: center;
+/************************ End global styles ************************/
+/************************ Start header styles ************************/
+header {
+    background-color: var(--dark_bg);
+    color: var(--header_color);
+    padding: 10px 0;
+    font-size: .8rem;
 }
 
-.details {
-    display: none;
-    font-size: initial;
-    color: #00F;
+
+header .left .contact {
+    margin-left: 20px;
 }
 
-.show:hover+p {
-    display: block;
+header i {
+    margin: 0 5px;
 }
 
-.parent>.baby:not(:first-child) {
-    color: #F00;
-    font-size: 25px;
+/************************ End header styles ************************/
+/************************ Start nav styles ************************/
+
+nav .links {
+    width: 80%;
 }
 
-#home,
-#about,
-#contact {
-    height: 400px;
+nav .links ul {
+    margin: auto;
+    width: 50%;
 }
 
-:target {
-    background-color: #EEE;
+nav .links,
+nav .notification {
+    margin-top: 30px;
 }
 
-.element::first-line {
-    color: #00F;
-    font-weight: bold;
-    font-size: 30px;
+nav .links ul li {
+    list-style: none;
+    margin-left: 30px;
 }
 
-.element::selection {
-    background-color: #F00;
-    color: #38cd21;
+nav .links ul li a {
+    text-decoration: none;
+    color: var(--default_color);
 }
 
-.element::after {
-    content: "";
-    /* font-size: 50px; */
-    color: #4e4e4e
-}
-
-ol li::marker {
-    color: #F00
-}
-
-.view:hover .more {
-    display: block;
-}
-
-.more {
-    height: 100px;
-    width: 100px;
-    background-color: #EEE;
+nav .notification i {
     position: relative;
-    padding-top: 10px;
-    display: none;
+    margin-left: 15px;
 }
 
-.more::after {
-    content: "";
+nav .notification i span {
     position: absolute;
-    top: 0;
-    left: 30%;
-    border: 10px solid transparent;
-    border-top-color: #000;
-    height: 10px;
+    top: -12px;
+    right: -14px;
+    background-color: var(--header_color);
+    border-radius: 5px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-size: .7rem;
+    width: 20px;
+    text-align: center;
+    padding: 2px;
 }
 
-.fa-twitter:hover {
-    color: #1da1f2
+/************************ End nav styles ************************/
+/************************ Start Hero styles ************************/
+.hero {
+    background-color: var(--hero_bg);
 }
 
-.dis {
-    visibility: visible;
+.hero .right,
+.hero .left {
+    width: 50%;
 }
 
-.test span {
-    display: inline-block;
-    height: 100px;
-    background: #F00;
-    width: 100px;
-    margin: 50px;
-    /* padding: 50px; */
+.hero .left {
+    margin-top: 15%;
 }
+
+.hero .right img {
+    max-width: 100%;
+    margin-top: 12%;
+}
+
+/************************ End Hero styles ************************/
