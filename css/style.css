@@ -1,129 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
-
-:root {
-    --header_color: #cfd6e1;
-    --default_color: #81848a;
-    --gray_color: #cacac2;
-    --gold: #ede861;
-    --brand: #59ab6e;
-    --dark_bg: #212934;
-    --light_bg: #e9eef5;
-    --hero_bg: #efefef
-}
-
-* {
-    box-sizing: border-box;
-    font-family: 'Cairo', sans-serif;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-}
-
-.float_parent>div,
-.float_parent>li {
-    float: left;
-}
-
-.float_parent::after {
-    display: block;
-    content: "";
-    clear: both
-}
-
 body {
-    height: 8000px;
+    height: 5000px;
 }
 
-.float_right {
-    float: right !important;
+.pos {
+    height: 100px;
+    width: 100px;
+    background-color: #444;
+    color: #FFF
 }
 
-/************************ End global styles ************************/
-/************************ Start header styles ************************/
-header {
-    background-color: var(--dark_bg);
-    color: var(--header_color);
-    padding: 10px 0;
-    font-size: .8rem;
-}
-
-
-header .left .contact {
-    margin-left: 20px;
-}
-
-header i {
-    margin: 0 5px;
-}
-
-/************************ End header styles ************************/
-/************************ Start nav styles ************************/
-
-nav .links {
-    width: 80%;
-}
-
-nav .links ul {
-    margin: auto;
-    width: 50%;
-}
-
-nav .links,
-nav .notification {
-    margin-top: 30px;
-}
-
-nav .links ul li {
-    list-style: none;
-    margin-left: 30px;
-}
-
-nav .links ul li a {
-    text-decoration: none;
-    color: var(--default_color);
-}
-
-nav .notification i {
-    position: relative;
-    margin-left: 15px;
-}
-
-nav .notification i span {
+.absolute {
     position: absolute;
-    top: -12px;
-    right: -14px;
-    background-color: var(--header_color);
-    border-radius: 5px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    font-size: .7rem;
-    width: 20px;
+    bottom: 0;
+    right: 0;
+}
+
+.fixed {
+    position: fixed;
+    right: 50px;
+    bottom: 0;
+    background-color: #00F
+}
+
+.relative {
+    height: 300px;
+    width: 300px;
+    background-color: aqua;
+}
+
+.test {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    opacity: .5;
+}
+
+/* 01103811777 Rahma Mamdouh*/
+
+
+.one {
+    height: 200px;
+    width: 200px;
+    background-color: #CCC;
+    overflow: auto;
+}
+
+input {
+    border: 0;
+    outline: none;
+}
+
+h2 {
     text-align: center;
-    padding: 2px;
+    text-transform: uppercase;
+    text-decoration: underline;
 }
 
-/************************ End nav styles ************************/
-/************************ Start Hero styles ************************/
-.hero {
-    background-color: var(--hero_bg);
+.two {
+    text-indent: 70px;
+    line-height: 40px;
+    word-spacing: 20px;
+    letter-spacing: 10px;
 }
 
-.hero .right,
-.hero .left {
-    width: 50%;
+table,
+th,
+td {
+    border: 2px solid;
 }
 
-.hero .left {
-    margin-top: 15%;
+th {
+    writing-mode: tb;
 }
 
-.hero .right img {
-    max-width: 100%;
-    margin-top: 12%;
+.service {
+    background: linear-gradient(#F00, #0FF)  ,url(../images/category_img_02.jpg);
+    background-size: cover;
+    height: 500px;
+    position: relative;
 }
 
-/************************ End Hero styles ************************/
+/* .overlay {
+    inset: 0;
+    position: absolute;
+    background-color: #00000045;
+} */
