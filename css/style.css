@@ -1,92 +1,62 @@
-body {
-    height: 5000px;
+* {
+    box-sizing: border-box;
 }
 
-.pos {
+body {
+    height: 3000px;
+}
+
+.transform {
     height: 100px;
     width: 100px;
-    background-color: #444;
-    color: #FFF
+    background-color: #F00;
+    margin: 20px;
+    transform-origin: 0% 0%;
 }
 
-.absolute {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.transform:hover {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
 }
 
-.fixed {
-    position: fixed;
-    right: 50px;
-    bottom: 0;
-    background-color: #00F
-}
-
-.relative {
-    height: 300px;
-    width: 300px;
-    background-color: aqua;
-}
-
-.test {
-    height: 200px;
-    width: 200px;
-    background-color: red;
-}
-
-.sticky {
-    position: sticky;
-    top: 0;
-    opacity: .5;
-}
-
-/* 01103811777 Rahma Mamdouh*/
-
-
-.one {
-    height: 200px;
-    width: 200px;
-    background-color: #CCC;
-    overflow: auto;
-}
-
-input {
-    border: 0;
-    outline: none;
-}
-
-h2 {
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: underline;
-}
-
-.two {
-    text-indent: 70px;
-    line-height: 40px;
-    word-spacing: 20px;
-    letter-spacing: 10px;
-}
-
-table,
-th,
-td {
-    border: 2px solid;
-}
-
-th {
-    writing-mode: tb;
-}
-
-.service {
-    background: linear-gradient(#F00, #0FF)  ,url(../images/category_img_02.jpg);
-    background-size: cover;
-    height: 500px;
+.card {
+    height: 150px;
+    width: 100px;
     position: relative;
+    text-align: center;
+    color: #FFF;
+    backface-visibility: hidden;
+    transition: 1s all ease-in;
+    -webkit-transition: 1s all ease-in;
+    -moz-transition: 1s all ease-in;
+    -ms-transition: 1s all ease-in;
+    -o-transition: 1s all ease-in;
+    -webkit-backface-visibility: hidden;
 }
 
-/* .overlay {
-    inset: 0;
+.card:hover {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+
+.front,
+.back {
     position: absolute;
-    background-color: #00000045;
-} */
+    inset: 0;
+    background-color: #F00;
+}
+
+.back {
+    background-color: #00F;
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+}
