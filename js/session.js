@@ -1,52 +1,78 @@
-console.log("I am external")
+var person =
+{
+    name: "Ali",
+    age: 20,
+    city: {
+        cityOne: "Cairo",
+        cityTwo: "Shaqia"
+    }
+}
 
+console.log(person)
+console.log(typeof person)
+
+// Bracket notation
+console.log(person["age"])
+
+// Dot notation
+console.log(person.name)
+
+console.log("Hello your name is " + person.name + " and your age is " + person.age)
+
+
+
+function sayHello(username) {
+    console.log("Hello " + username)
+}
+
+// var sayHello = function () {
+//     console.log("OK")
+// }
+
+console.log(typeof sayHello)
+sayHello("Mohamed")
 
 /*
-var x;
-x = 10; // global variable
+function sum(x, y) {
+    console.log(x + y)
+}
+function divide(x, y) {
+    console.log(x / y)
+}
+function substraction(x, y) {
+    console.log(x - y)
+}
+function muliply(x, y) {
+    console.log(x * y)
+}
 
-*/
-
-var x = 10
-console.log(x)
-
-
-var first_num = 50,
-    second_num = 100,
-    total = first_num + second_num;
-
-console.log(total)
-
-var course_name = "JavaScript";
-
-console.log(course_name)
-
-var test;
-console.log(test)
-
-var isSold = true;
-
-console.log(isSold)
-
-console.log(document.getElementById("eghm"))
+var x = prompt("Please enter your first number"),
+    y = prompt("Please enter your second number")
 
 
-/******************* Concatenation *************************
-var stu_name = "Androw",
-    last_name = "John",
-    full_name = stu_name + " " + last_name;//concatenation
+sum(x, y)
+divide(x, y)
+substraction(x, y)
+muliply(x, y)
 
-console.log(full_name)
+function sum2(x, y) {
+    return x + y
+}
+console.log(sum2(8, 4))
 
+/************************************/
+var persons = ["Mohamed", "Ahmed", "Mahmoud", "Abdo", "Omar"];
 
-var employee_name = prompt("Please enter your first name"),
-    employee_last_name = prompt("Please enter your last name");
+// var persons = new Array();
 
-console.log("Your full name is "+employee_name + " " + employee_last_name)
+// persons[0] = "Mohamed";
+// persons[1] = "Ahmed";
 
-*/
+console.log(persons)
+console.log(persons[4])
+console.log(persons.length)
 
-// var age = Number(prompt("Please enter your age"));
-var year_of_birth = prompt("Please enter your year of birth");
-
-console.log(2023 - year_of_birth)
+console.log(persons[3])
+console.log(persons[persons.length - 1])
+console.log(persons.at(-1))
+console.log(typeof persons)
