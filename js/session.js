@@ -1,56 +1,29 @@
-"use strict";
+console.log(parseInt("15.95"))
+console.log(Number("15.15"))
+console.log(parseFloat("15.15"))
 
-var x = 5;
-try {
-    console.log(x)
 
-} catch (error) {
-    console.error("From Mohamed : " + error.message)
+
+var myName = "Mohamed",
+    lastName = "Ahmed",
+    job = "frontend developer and frontend instructor";
+
+
+/**************************** length ************************************
+console.log(myName.length);
+
+/**************************** charAt ************************************
+
+console.log(myName.charAt(0))
+/**************************** charCodeAt ***************************
+
+console.log(myName.charCodeAt(0))
+
+/**************************** fromCharCode ************************************/
+
+console.log(String.fromCharCode(65))
+
+
+for (let i = 65; i <= 90; i++) {
+    console.log(String.fromCharCode(i))
 }
-finally {
-    console.log(55)
-}
-
-
-function calcArea(x, y) {
-    if (isNaN(x) || isNaN(y)) {
-        throw new Error("It is not number")
-    }
-    else {
-        return x * y
-    }
-}
-try {
-    console.log(calcArea(5, "d"))
-} catch (er) {
-    console.error("Custom error : " + er.message)
-}
-
-
-// t = 80;
-
-// console.log(t)
-
-
-var iterate = 1
-
-
-// while (iterate <= 10) {
-//     console.log(iterate)
-//     iterate++
-// }
-
-// do {
-//     console.log(iterate)
-//     iterate++
-// } while (iterate <= 0);
-
-for (var i = 1; i <= 10; i++) {
-    if(i === 5) break;
-    console.log(i)
-}
-// let persons = ["Mohamed", "Mahmoud", "Abdo", "Youssef", "Aya"]
-// for (let index = 0; index < persons.length; index++) {
-//     const element = persons[index];
-//     console.log(element)
-// }
