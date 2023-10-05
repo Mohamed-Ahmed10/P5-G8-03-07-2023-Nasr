@@ -1,0 +1,12 @@
+.fromJS {
+    font-weight: bold;
+    color: #F00
+}
+
+#alertMsg {
+    display: none;
+}
+
+.show {
+    display: inline !important;
+}
