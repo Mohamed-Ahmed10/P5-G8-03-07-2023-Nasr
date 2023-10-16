@@ -21,42 +21,164 @@
     <!-- ?------------------ My styles  ----------------------->
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Document</title>
+    <title>Bootstrap session</title>
 </head>
 
 <body>
-    <div id="testId" data-user="This is for user">
-        This is have an ID
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, animi!</p>
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Example
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Example
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Example
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Example
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="mx-auto">test</div>
+    <div class="container-fluid">
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1">
+            <div class="col">
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Example
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Example
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Example
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Example
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
 
-    <section>
-        <div class="test">one</div>
-        <div class="test">two</div>
-    </section>
-    <div class="test">three</div>
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+        <input class="form-control" type="file" id="formFileMultiple" multiple>
+    </div>
 
+    <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">First name</label>
+            <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Username</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername"
+                    aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationCustom03" class="form-label">City</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Please provide a valid city.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">State</label>
+            <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a valid state.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="validationCustom05" required>
+            <div class="invalid-feedback">
+                Please provide a valid zip.
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </form>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
-    <input type="text" name="username">
-    <input type="text" name="username">
-    <input type="text" name="username">
-    <input type="text" name="username">
+    <script>
+        (() => {
+            'use strict'
 
-    <button onclick="addAttr()">Click me</button>
-    <hr>
-    <button onclick="toggleShow()" id="passwordBtn">Show password</button>
-    <input type="text" id="userPassword">
-    <span id="alertMsg">Error</span>
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
 
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
 
-    <!-- ************************************ -->
-    <div class="classExplain">This is for class</div>
-    <button id="forClass" onclick="classFn()">Click me</button>
-
-
-    <script src="./js/session.js"></script>
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 
 </html>
