@@ -1,12 +1,13 @@
+.ok {
+    height: 250px;
+    width: 300px;
+}
+
+.fromHTML {
+    background-color: #F01;
+    color: #FFD
+}
+
 .fromJS {
-    font-weight: bold;
-    color: #F00
-}
-
-#alertMsg {
-    display: none;
-}
-
-.show {
-    display: inline !important;
+    background-color: #00F;
 }
