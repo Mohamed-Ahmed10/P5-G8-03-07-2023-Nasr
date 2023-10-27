@@ -1,67 +1,116 @@
-window.onload = function () { console.log("Loaded") }
-var test = document.querySelector("#test"),
-    btn = document.getElementById("btn"),
-    parent = document.getElementsByClassName("parent")[0]
+let task_input = document.getElementById("taskInput"),
+    form = document.forms[0],
+    output = document.getElementById("output"),
+    tasks_counter = document.querySelector("#tasksCounter"),
+    finished_counter = document.getElementById("finishedCounter");
 
 
-var node = document.createElement("span"),
-    text = document.createTextNode("This is text")
+let tasks = [];
+
+window.onload = getTasks();
 
 
+form.addEventListener("submit", function (ev) {
+    ev.preventDefault()
+    if (task_input.value === "") {
+        alert("You can not add an empty task")
+    }
+    else if (tasks.includes(task_input.value)) {
+        alert("you can not add >>" + task_input.value + " << again")
+    }
+    else {
+        tasks.push(task_input.value)
+        afterAdd()
+        addTasks()
+        counter()
+        finishTask()
+        deleteTask()
+        saveTasks()
+    }
+})
 
-btn.onclick = function replaceClasses() {
-    // test.className = "fromJS"
-    // test.classList.add("fromJS")
-    // test.classList.remove("fromHTML")
-    // test.classList.toggle("fromJS")
-    // console.log(test.classList.contains("ok"))
-    // console.log(test.classList.item(1))
 
-
-    node.append(text)
-    // parent.prepend(text)
-
-    // parent.appendChild(node)
+function afterAdd() {
+    task_input.value = ""
+    task_input.focus()
 }
 
-console.log(parent)
-console.log(parent.children)
-console.log(parent.firstElementChild)
-console.log(parent.lastElementChild)
+function addTasks() {
+    /*
+        output.innerHTML = ""
+        for (let index = 0; index < tasks.length; index++) {
+            const task = tasks[index];
+    
+            // let task_li = document.createElement('li');
+            // task_li.className = "list-group-item";
+            // task_li.innerHTML = task;
+    
+            let task_li = `<li class="list-group-item">${task}</li>`
+    
+            output.innerHTML += task_li
+        }
+        */
+    let task_li = `<li class="task list-group-item d-flex justify-content-between align-items-center text-bg-secondary">
+                        <span class="fw-bold">${tasks[tasks.length - 1]}</span> 
+                        <i class="fa-solid fa-trash text-danger"></i>
+                    </li>`
 
+    output.innerHTML += task_li
+}
 
-console.log(parent.childNodes)
-console.log(parent.firstChild)
-console.log(parent.lastChild)
+function counter() {
+    // tasks_counter.innerHTML = tasks.length
+    tasks_counter.innerHTML = output.children.length
+}
+function finishTask() {
+    let tasks = document.getElementsByClassName("task")
 
-/////////////////////////////////////////////////////
-var btn2 = document.getElementById("btn2"),
-    myForm = document.forms[0],
-    myInput = myForm.children[0],
-    output = document.getElementById("output")
+    for (let index = 0; index < tasks.length; index++) {
+        const task = tasks[index];
 
+        task.addEventListener("click", function () {
+            task.classList.toggle("bg-success")
+            task.classList.toggle("finished")
+            countFinished()
+        })
+    }
+}
 
-// btn2.onclick = function () { console.log("Clicked") }
-// btn2.onclick = function () { console.log("Clicked 2") }
+function countFinished() {
+    let finished = document.querySelectorAll(".finished");
+    finished_counter.textContent = finished.length
+}
 
+function deleteTask() {
+    let delete_icons = document.querySelectorAll(".fa-trash");
 
-// btn2.addEventListener('click', function () { console.log("Click from event listener") })
+    for (let index = 0; index < delete_icons.length; index++) {
+        const delete_icon = delete_icons[index];
 
-btn2.addEventListener('click', function (ev) {
-    console.log("Click from event listener 2")
-    ev.target.textContent = "OK"
-})
+        delete_icon.addEventListener("click", function (ev) {
+            ev.stopPropagation()
+            this.parentElement.remove()
+            tasks.splice(tasks.indexOf(delete_icon.previousElementSibling.textContent), 1)
+            console.log(tasks)
+            counter()
+            countFinished()
+        })
+    }
+}
+function saveTasks() {
+    localStorage.setItem('tasks', tasks.toString())
+}
 
-myForm.addEventListener("submit", function (ev) {
-    ev.preventDefault()
-    console.log("Submitted")
-    console.log(this)
-})
-console.log(myInput)
-// Click dblclick submit (preventDefault) contextmenu
+function getTasks() {
+    if (localStorage.getItem("tasks")) {
+        tasks = localStorage.getItem("tasks").split(",")
 
-
-myInput.addEventListener("blur", function (event) {
-    // output.innerHTML = event.target.value
-    console.log("Blur")
-})
+        for (let index = 0; index < tasks.length; index++) {
+            const task = tasks[index];
+            output.innerHTML += `<li class="task list-group-item d-flex justify-content-between align-items-center text-bg-secondary">
+            <span class="fw-bold">${task}</span> 
+            <i class="fa-solid fa-trash text-danger"></i>
+            </li>`
+        }
+    }
+}

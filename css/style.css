@@ -1,13 +1,3 @@
-.ok {
-    height: 250px;
-    width: 300px;
-}
-
-.fromHTML {
-    background-color: #F01;
-    color: #FFD
-}
-
-.fromJS {
-    background-color: #00F;
+.fa-trash {
+    cursor: pointer;
 }

@@ -20,32 +20,36 @@
 
     <!-- ?------------------ My styles  ----------------------->
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>JS session</title>
+    <title>To do list</title>
 </head>
 
 <body>
-
-    <button id="btn">OK</button>
-    <div id="test" class="fromHTML ok">This is my tag</div>
-
-    <div class="parent">
-        <div class="child">1</div>
-        <div class="child">2</div>
-        <!-- test -->
-        <div class="child">3</div>
-        <div class="child">4</div>
+    <div class="container mt-4">
+        <form action="">
+            <div class="row justify-content-between">
+                <div class="col-10">
+                    <input type="text" autocomplete="off" id="taskInput" class="form-control" autofocus
+                        placeholder="Please enter your task">
+                </div>
+                <div class="col-2">
+                    <input type="submit" value="Add new" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-evenly pt-3">
+                <h2>Tasks <span id="tasksCounter" class="badge bg-info">0</span></h2>
+                <h2>Finished tasks <span id="finishedCounter" class="badge bg-info">0</span></h2>
+            </div>
+            <div class="col-12 pt-4">
+                <ul id="output" class="list-group"></ul>
+            </div>
+        </div>
     </div>
-    <hr>
-    <button id="btn2">I am a btn</button>
-
-    <form action="">
-        <input type="text">
-        <input type="submit" value="OK">
-    </form>
-    <div id="output"></div>
 
     <script src="./js/main.js"></script>
 </body>
