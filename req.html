@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="output"></ul>
+
+    <div class="container">
+        <div class="row" id="productsContainer"></div>
+    </div>
+
+
+    <!-- <script>
+        var output = document.getElementById("output")
+        var users = new XMLHttpRequest;
+        
+        users.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                let res = JSON.parse(this.response);
+                for (let index = 0; index < res.length; index++) {
+                    const user = res[index];
+                    output.innerHTML += `<li id=${user.id}>${user.name} - ${user.email}</li>`
+                }
+            }
+        }
+        users.open('GET', "https://jsonplaceholder.typicode.com/users")
+        users.send()
+    </script> -->
+
+    <!-- <script>
+        var output = document.getElementById("output")
+
+        function getUsers() {
+            fetch("https://dummyjson.com/products")
+                .then(res => res.json())
+                .then(res => console.log(res.products))
+        }
+        window.onload = getUsers()
+    </script> -->
+
+    <script>
+        var products = new XMLHttpRequest,
+            products_container = document.querySelector("#productsContainer")
+        let res = []
+
+
+        products.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                res = JSON.parse(this.response).products;
+                for (let index = 0; index < res.length; index++) {
+                    const product = res[index];
+                    products_container.innerHTML +=
+                        `<div class="col-4 p-4">
+                        <div class="card h-100">
+                            <img src=${product.thumbnail} class="card-img-top" alt=${product.title}>
+                            <div class="card-body">
+                                <h5 class="card-title">${product.title}</h5>
+                                <p class="card-text">${product.description}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>`
+                }
+            }
+        }
+        products.open('GET', "https://dummyjson.com/products")
+        products.send()
+    </script>
+</body>
+
+</html>

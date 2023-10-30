@@ -2,12 +2,19 @@ let task_input = document.getElementById("taskInput"),
     form = document.forms[0],
     output = document.getElementById("output"),
     tasks_counter = document.querySelector("#tasksCounter"),
-    finished_counter = document.getElementById("finishedCounter");
+    finished_counter = document.getElementById("finishedCounter"),
+    empty = document.getElementById("empty"),
+    tasks = [],
+    id = 0;
 
-
-let tasks = [];
-
-window.onload = getTasks();
+window.onload = function () {
+    getTasks();
+    deleteTask();
+    counter();
+    finishTask();
+    countFinished();
+    checkEmpty();
+}
 
 
 form.addEventListener("submit", function (ev) {
@@ -19,16 +26,16 @@ form.addEventListener("submit", function (ev) {
         alert("you can not add >>" + task_input.value + " << again")
     }
     else {
-        tasks.push(task_input.value)
-        afterAdd()
-        addTasks()
-        counter()
-        finishTask()
-        deleteTask()
-        saveTasks()
+        tasks.push({ content: task_input.value, status: false })
+        afterAdd();
+        addTasks();
+        counter();
+        finishTask();
+        deleteTask();
+        saveTasks();
+        checkEmpty();
     }
 })
-
 
 function afterAdd() {
     task_input.value = ""
@@ -36,22 +43,9 @@ function afterAdd() {
 }
 
 function addTasks() {
-    /*
-        output.innerHTML = ""
-        for (let index = 0; index < tasks.length; index++) {
-            const task = tasks[index];
-    
-            // let task_li = document.createElement('li');
-            // task_li.className = "list-group-item";
-            // task_li.innerHTML = task;
-    
-            let task_li = `<li class="list-group-item">${task}</li>`
-    
-            output.innerHTML += task_li
-        }
-        */
-    let task_li = `<li class="task list-group-item d-flex justify-content-between align-items-center text-bg-secondary">
-                        <span class="fw-bold">${tasks[tasks.length - 1]}</span> 
+
+    let task_li = `<li class="task list-group-item d-flex justify-content-between align-items-center text-bg-secondary" id=${id++}>
+                        <span class="fw-bold">${tasks[tasks.length - 1].content}</span> 
                         <i class="fa-solid fa-trash text-danger"></i>
                     </li>`
 
@@ -63,14 +57,16 @@ function counter() {
     tasks_counter.innerHTML = output.children.length
 }
 function finishTask() {
-    let tasks = document.getElementsByClassName("task")
+    let tasksLi = document.getElementsByClassName("task")
 
-    for (let index = 0; index < tasks.length; index++) {
-        const task = tasks[index];
+    for (let index = 0; index < tasksLi.length; index++) {
+        const taskLi = tasksLi[index];
 
-        task.addEventListener("click", function () {
-            task.classList.toggle("bg-success")
-            task.classList.toggle("finished")
+        taskLi.addEventListener("click", function () {
+            taskLi.classList.toggle("bg-success")
+            taskLi.classList.toggle("finished")
+            tasks[taskLi.getAttribute('id')].status = !tasks[taskLi.getAttribute('id')].status;
+            saveTasks()
             countFinished()
         })
     }
@@ -91,26 +87,39 @@ function deleteTask() {
             ev.stopPropagation()
             this.parentElement.remove()
             tasks.splice(tasks.indexOf(delete_icon.previousElementSibling.textContent), 1)
-            console.log(tasks)
-            counter()
-            countFinished()
+            counter();
+            countFinished();
+            saveTasks();
+            checkEmpty();
         })
     }
 }
 function saveTasks() {
-    localStorage.setItem('tasks', tasks.toString())
+    localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
 function getTasks() {
     if (localStorage.getItem("tasks")) {
-        tasks = localStorage.getItem("tasks").split(",")
+        tasks = JSON.parse(localStorage.getItem("tasks"));
 
         for (let index = 0; index < tasks.length; index++) {
             const task = tasks[index];
-            output.innerHTML += `<li class="task list-group-item d-flex justify-content-between align-items-center text-bg-secondary">
-            <span class="fw-bold">${task}</span> 
-            <i class="fa-solid fa-trash text-danger"></i>
-            </li>`
+            output.innerHTML += `<li class="task list-group-item d-flex justify-content-between align-items-center text-bg-secondary 
+                                    ${task.status && 'finished bg-success'}" id=${id++}>
+                                    <span class="fw-bold">${task.content}</span> 
+                                    <i class="fa-solid fa-trash text-danger"></i>
+                                </li>`
         }
+    }
+}
+
+function checkEmpty() {
+    if (tasks.length === 0) {
+        empty.classList.add('d-block')
+        empty.classList.remove('d-none')
+    }
+    else {
+        empty.classList.remove('d-block')
+        empty.classList.add('d-none')
     }
 }
