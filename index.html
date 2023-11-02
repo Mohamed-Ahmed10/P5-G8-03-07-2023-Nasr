@@ -24,53 +24,14 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>To do list</title>
+    <title>JS BOM</title>
 </head>
 
 <body>
-    <div class="container mt-4">
-        <form action="">
-            <div class="row justify-content-between">
-                <div class="col-10">
-                    <input type="text" autocomplete="off" id="taskInput" class="form-control" autofocus
-                        placeholder="Please enter your task">
-                </div>
-                <div class="col-2">
-                    <input type="submit" value="Add new" class="btn btn-primary">
-                </div>
-            </div>
-        </form>
-        <div class="row">
-            <div class="col-12 d-flex justify-content-evenly pt-3">
-                <h2>Tasks <span id="tasksCounter" class="badge bg-info">0</span></h2>
-                <h2>Finished tasks <span id="finishedCounter" class="badge bg-info">0</span></h2>
-            </div>
-            <div class="col-12 pt-4">
-                <ul id="output" class="list-group"></ul>
-            </div>
-            <h1 class="text-center d-none text-bg-success p-2" id="empty">There is no tasks here</h1>
-        </div>
-    </div>
 
-    <script src="./js/main.js"></script>
-
-    <!-- <script>
-        var jsTask = {
-            value: "I am task JS",
-            status: false
-        }
-        var jsonTask = `{
-            "value": "I am task Json",
-            "status": false
-        }`
-        console.log(jsTask)
-        console.log(typeof jsTask)
-        console.log(JSON.stringify(jsTask))
-        console.log("_".repeat(30))
-        console.log(jsonTask)
-        console.log(typeof jsonTask)
-        console.log(JSON.parse(jsonTask))
-    </script> -->
+    <!-- <script type="module" src="./js/main.js"></script> -->
+    <script type="module" src="./js/session.js"></script>
+    <script type="module" src="./js/oop.js"></script>
 </body>
 
 </html>
