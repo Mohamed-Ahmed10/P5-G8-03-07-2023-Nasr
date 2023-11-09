@@ -1,0 +1,6 @@
+@mixin position($x : 0, $y :0) {
+    top: $x;
+    right: $y;
+    bottom: $x;
+    left: $y;
+}
