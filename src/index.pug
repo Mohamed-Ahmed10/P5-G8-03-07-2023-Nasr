@@ -1,0 +1,14 @@
+-var username = "Mohamed";
+-var pageTitle = "Home page"
+doctype html
+html(lang="en")
+    include pug/helpers/headTags
+    body 
+        include pug/layout/nav
+        .parent I am parent
+            .child I am child 
+            |hello 
+            p.myP Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, dolore? #{username}
+            a(href="#") click me 
+            a(class='button' href='//google.com') Google
+            include pug/components/explain
